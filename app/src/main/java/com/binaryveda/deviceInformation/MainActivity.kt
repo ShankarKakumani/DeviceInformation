@@ -1,21 +1,27 @@
 package com.binaryveda.deviceInformation
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
+import android.telephony.TelephonyManager
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("TAG_INFO", "Manufacturer : " + DeviceUtils.getDeviceManufacturer())
-        Log.d("TAG_INFO", "Model : " + DeviceUtils.getDeviceModel())
-        Log.d("TAG_INFO", "OS/SDK Version : " + DeviceUtils.getOSVersion())
-        Log.d("TAG_INFO", "OS Type : " + DeviceUtils.getOSType())
-        Log.d("TAG_INFO", "App Version : " + DeviceUtils.getAppVersion())
-        Log.d("TAG_INFO", "Screen Resolution : " + DeviceUtils.getScreenResolution())
-        Log.d("TAG_INFO", "Device Id : " + DeviceUtils.getDeviceId(this))
+        val utils = DeviceUtils()
+        Log.d("TAG_INFO", "Manufacturer : " + utils.deviceManufacturer)
+        Log.d("TAG_INFO", "Model : " + utils.deviceModel)
+        Log.d("TAG_INFO", "OS/SDK Version : " + utils.osVersion)
+        Log.d("TAG_INFO", "OS Type : " + utils.osType)
+        Log.d("TAG_INFO", "App Version : " + utils.appVersion)
+        Log.d("TAG_INFO", "Screen Resolution : " + utils.screenResolution)
+        Log.d("TAG_INFO", "Device Id : " + utils.getDeviceId(this))
         Log.d("TAG_INFO", "isDevice rooted : " + (RootChecker.isDeviceRooted()))
 
     }
