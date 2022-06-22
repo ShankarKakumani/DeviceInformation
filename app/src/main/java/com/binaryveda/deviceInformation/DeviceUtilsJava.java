@@ -4,53 +4,52 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 public class DeviceUtilsJava {
 
-    public static String getDeviceManufacturer() {
+    public String getDeviceManufacturer() {
         return Build.MANUFACTURER;
     }
 
-    public static String getDeviceModel() {
+    public String getDeviceModel() {
         return Build.MODEL;
     }
 
-    public static int getOSVersion() {
+    public int getOSVersion() {
         return Build.VERSION.SDK_INT;
     }
 
-    public static String getOSType() {
+    public String getOSType() {
         return "Android";
     }
 
-    public static String getAppVersion() {
+    public String getAppVersion() {
         return BuildConfig.VERSION_NAME;
     }
 
-    public static int getScreenWidth() {
+    public int getScreenWidth() {
         return Resources.getSystem().getDisplayMetrics().widthPixels;
     }
 
-    public static int getScreenHeight() {
+    public int getScreenHeight() {
         return Resources.getSystem().getDisplayMetrics().heightPixels;
     }
 
-    public static String getScreenResolution() {
+    public String getScreenResolution() {
         return getScreenWidth() + " W X " + getScreenHeight() + " H";
     }
 
-    public static String getDeviceId(Context context) {
+    public String getDeviceId(Context context) {
         return Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
     }
 
-    public static Boolean isDeviceRooted() {
+    public Boolean isDeviceRooted() {
         return RootChecker.INSTANCE.isDeviceRooted();
     }
 
     /** Returns the consumer friendly device name */
-    public static String getDeviceManufacturerWithModel() {
+    public String getDeviceManufacturerWithModel() {
         String manufacturer = Build.MANUFACTURER;
         String model = Build.MODEL;
         if (model.startsWith(manufacturer)) {
@@ -59,7 +58,7 @@ public class DeviceUtilsJava {
         return capitalize(manufacturer) + " " + model;
     }
 
-    private static String capitalize(String str) {
+    private String capitalize(String str) {
         if (TextUtils.isEmpty(str)) {
             return str;
         }

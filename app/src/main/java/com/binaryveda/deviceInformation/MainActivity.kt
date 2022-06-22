@@ -3,6 +3,7 @@ package com.binaryveda.deviceInformation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.binaryveda.deviceInformation.DeviceUtilsJava
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
