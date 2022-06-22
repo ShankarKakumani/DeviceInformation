@@ -6,7 +6,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-public class DeviceUtilsJava {
+public class DeviceUtils {
 
     public String getDeviceManufacturer() {
         return Build.MANUFACTURER;
