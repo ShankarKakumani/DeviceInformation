@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         Log.d("TAG_INFO", "App Version : " + utils.appVersion)
         Log.d("TAG_INFO", "Screen Resolution : " + utils.screenResolution)
         Log.d("TAG_INFO", "Device Id : " + utils.getDeviceId(this))
-        Log.d("TAG_INFO", "isDevice rooted : " + (RootCheckerKT.isDeviceRooted()))
+        Log.d("TAG_INFO", "isDevice rooted : " + (RootChecker().isDeviceRooted))
 
     }
 }
