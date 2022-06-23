@@ -45,7 +45,7 @@ public class DeviceUtils {
     }
 
     public Boolean isDeviceRooted() {
-        return RootChecker.INSTANCE.isDeviceRooted();
+        return new RootChecker().isDeviceRooted();
     }
 
     /** Returns the consumer friendly device name */
