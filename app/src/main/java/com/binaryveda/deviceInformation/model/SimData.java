@@ -14,7 +14,8 @@ public class SimData {
             String mobileNumber,
             String carrierName,
             Integer subscriptionId,
-            String iccId, Integer simSlotIndex,
+            String iccId,
+            Integer simSlotIndex,
             String displayName,
             Integer dataRoaming,
             String countryISO

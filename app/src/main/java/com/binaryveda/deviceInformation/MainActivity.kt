@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        database = Firebase.database.reference
 
         if(havePermission(Manifest.permission.READ_PHONE_STATE)) {
-            database = Firebase.database.reference
             writeDataToFirebase()
         } else {
             permissionContract.launch(Manifest.permission.READ_PHONE_STATE)
