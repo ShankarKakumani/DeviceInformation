@@ -1,4 +1,6 @@
-package com.binaryveda.deviceInformation;
+package com.binaryveda.deviceInformation.model;
+
+import java.util.List;
 
 public class DeviceInformation {
     String deviceManufacturer;
@@ -9,6 +11,7 @@ public class DeviceInformation {
     String screenResolution;
     String deviceId;
     Boolean isDeviceRooted;
+    List<SimData> simList;
 
     public DeviceInformation(
             String deviceManufacturer,
@@ -18,7 +21,8 @@ public class DeviceInformation {
             String appVersion,
             String screenResolution,
             String deviceId,
-            Boolean isDeviceRooted
+            Boolean isDeviceRooted,
+            List<SimData> simList
     ) {
         this.deviceManufacturer = deviceManufacturer;
         this.deviceModel = deviceModel;
@@ -28,6 +32,7 @@ public class DeviceInformation {
         this.screenResolution = screenResolution;
         this.deviceId = deviceId;
         this.isDeviceRooted = isDeviceRooted;
+        this.simList = simList;
     }
 
     public String getDeviceManufacturer() {
@@ -86,12 +91,20 @@ public class DeviceInformation {
         this.deviceId = deviceId;
     }
 
-    public Boolean getIsDeviceRooted() {
+    public Boolean getDeviceRooted() {
         return isDeviceRooted;
     }
 
-    public void setIsDeviceRooted(Boolean isDeviceRooted) {
-        this.isDeviceRooted = isDeviceRooted;
+    public void setDeviceRooted(Boolean deviceRooted) {
+        isDeviceRooted = deviceRooted;
+    }
+
+    public List<SimData> getSimList() {
+        return simList;
+    }
+
+    public void setSimDataList(List<SimData> simList) {
+        this.simList = simList;
     }
 }
 

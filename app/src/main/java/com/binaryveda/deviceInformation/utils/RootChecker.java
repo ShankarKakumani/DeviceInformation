@@ -1,4 +1,4 @@
-package com.binaryveda.deviceInformation;
+package com.binaryveda.deviceInformation.utils;
 
 import java.io.File;
 import java.util.Arrays;

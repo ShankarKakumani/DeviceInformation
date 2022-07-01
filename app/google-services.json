@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "729807854443",
+    "firebase_url": "https://device-information-75d9e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "device-information-75d9e",
+    "storage_bucket": "device-information-75d9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729807854443:android:50b58a1f3ab98f0ecd0a2e",
+        "android_client_info": {
+          "package_name": "com.binaryveda.deviceInformation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "729807854443-rium03dht6dvfsc2vhtgt9s0tfhtdogj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzpGguwLsxB1aIVfyAKVGU6DMYg83Z4lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "729807854443-rium03dht6dvfsc2vhtgt9s0tfhtdogj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
