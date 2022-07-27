@@ -15,9 +15,13 @@ import androidx.core.app.ActivityCompat;
 import com.binaryveda.deviceInformation.BuildConfig;
 import com.binaryveda.deviceInformation.model.DeviceInformation;
 import com.binaryveda.deviceInformation.model.SimData;
-import com.binaryveda.deviceInformation.model.SimDataList;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 public class DeviceUtils {
@@ -134,9 +138,26 @@ public class DeviceUtils {
                 getScreenResolution(),
                 getDeviceId(context),
                 isDeviceRooted(),
-                getSimDatList(context)
+                getSimDatList(context),
+                getLocalIpAddress()
         );
 
     }
 
+    public static String getLocalIpAddress() {
+        try {
+            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+                NetworkInterface intf = en.nextElement();
+                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+                    InetAddress inetAddress = enumIpAddr.nextElement();
+                    if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
+                        return inetAddress.getHostAddress();
+                    }
+                }
+            }
+        } catch (SocketException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
 }

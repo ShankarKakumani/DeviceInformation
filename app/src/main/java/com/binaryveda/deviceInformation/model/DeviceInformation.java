@@ -12,6 +12,7 @@ public class DeviceInformation {
     String deviceId;
     Boolean isDeviceRooted;
     List<SimData> simList;
+    String ipAddress;
 
     public DeviceInformation(
             String deviceManufacturer,
@@ -22,7 +23,8 @@ public class DeviceInformation {
             String screenResolution,
             String deviceId,
             Boolean isDeviceRooted,
-            List<SimData> simList
+            List<SimData> simList,
+            String ipAddress
     ) {
         this.deviceManufacturer = deviceManufacturer;
         this.deviceModel = deviceModel;
@@ -33,6 +35,7 @@ public class DeviceInformation {
         this.deviceId = deviceId;
         this.isDeviceRooted = isDeviceRooted;
         this.simList = simList;
+        this.ipAddress = ipAddress;
     }
 
     public String getDeviceManufacturer() {
@@ -105,6 +108,14 @@ public class DeviceInformation {
 
     public void setSimDataList(List<SimData> simList) {
         this.simList = simList;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
     }
 }
 
